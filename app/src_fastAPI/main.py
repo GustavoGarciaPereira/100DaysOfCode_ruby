@@ -35,7 +35,13 @@ app = FastAPI()
 
 @app.get('/{name}/{name2}')
 async def main(name:str, name2: str):
+    """
+        Creta um novo no
+        - **name**: nome do no
+        - **name2**: nome do no
+    """
     greeter = HelloWorldExample("bolt://localhost:7687", "neo4j", "gugu")
     greeter.print_greeting(name, name2)
     greeter.close()
     return {"status": "cadastrado"}
+
