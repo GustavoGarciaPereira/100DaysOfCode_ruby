@@ -8,7 +8,7 @@ import time
 app = FastAPI()
 
 origins = [
-    "http://localhost",
+    "http://gugu",
 ]
 
 app.add_middleware(
@@ -27,6 +27,10 @@ async def add_process_time_header(request: Request, call_next):
     response.headers['X-Process-Time'] = str(process_time)
     response.headers['hello'] = "hey you made a request big friend"
     return response
+
+
+
+
 
 @app.get('/')
 async def root():
